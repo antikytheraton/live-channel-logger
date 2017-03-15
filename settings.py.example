@@ -1,0 +1,11 @@
+
+API{
+    'CLIENTID': 'YOUR_CLIENT_ID_HERE!!'
+}
+
+DATABASE = {
+        'NAME': 'DB_NAME',
+        'USER': 'USER',
+        'PASSWORD': 'PASSWORD',
+        'HOST': 'localhost',
+    }
