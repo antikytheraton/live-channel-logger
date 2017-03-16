@@ -32,8 +32,6 @@ class PullData(object):
                 if not db_logger.track_exists(stream['channel']['name'], self.batch):
                     db_logger.log_stream(self.batch, stream)
                     self.increaseTotalViews()
-                else:
-                    print "Found existent channel"
             
             print "Collecting Data! Values: ", self.getTotalViews()
             print "Current page Value: ", self.getOffset()
@@ -48,7 +46,7 @@ class PullData(object):
         self.batch += 1
 
     def nextOffset(self):
-        self.offset += 80
+        self.offset += 50
     
     def getOffset(self):
         return self.offset

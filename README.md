@@ -1,6 +1,6 @@
 # Twitch Channel Scrapper
 
-A simple python scrapper to get live channles data and log it
+A simple python scrapper to get live channel data from Twitch and log it
 into a Postgres DB.
 
 ## Installation
@@ -24,20 +24,53 @@ do this you can run use the `requirements.txt` file:
 
 `pip install -r requirements.txt`
 
+You'll need to configurate the DB parameters. To do this you'll need to add the
+next information to the `settings.py` file:
 
+```
+DATABASE = {
+        'NAME': 'DB_NAME',
+        'USER': 'USER',
+        'PASSWORD': 'PASSWORD',
+        'HOST': 'localhost',
+    }
+```
+
+To configure the db you'll need to run the `create_tables.sql` file. To
+do this you run the next command:
+
+` psql USER -f create_tables.sql -U YOUR_DB_NAME -h localhost -W `
+
+And that's it! You're ready to go.
 
 ## Usage
 
-TODO: Write usage instructions
+To run the script just execute the `main.py` file:
+`python main.py`
+
+### Adding API Parameter
+To add your own parameters to pull from the API you just need to change
+the `twitch_api_url` variable in `DataPull.py`.
+
+### Speed VS Precision
+The API response is kind of slow so it takes the script from 20-30 min
+to pull all data. If you want it to go faster you can change the offset.
+The bigger the offset the faster BUT it will cost Precision in terms of
+the amount of data it pulls.
+
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
-## History
-TODO: Write history
+
+## TODO List
+1. Improve Performance with Mulithreading.
+2. Argparser to add the parameter via terminal.
+3. Pull more data.
+
 ## Credits
-TODO: Write credits
+- Juan Pablo Flores [Github](github.com/juanpflores)
 ## License
 TODO: Write license
