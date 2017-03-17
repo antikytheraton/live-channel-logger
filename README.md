@@ -24,7 +24,7 @@ do this you can run use the `requirements.txt` file:
 
 `pip install -r requirements.txt`
 
-You'll need to configurate the DB parameters. To do this you'll need to add the
+You'll need to configure the DB parameters. To do this you'll need to add the
 next information to the `settings.py` file:
 
 ```
@@ -32,7 +32,7 @@ DATABASE = {
         'NAME': 'DB_NAME',
         'USER': 'USER',
         'PASSWORD': 'PASSWORD',
-        'HOST': 'localhost',
+        'HOST': 'localhost'
     }
 ```
 
